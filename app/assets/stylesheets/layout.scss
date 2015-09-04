@@ -48,3 +48,22 @@ nav {
 main {
   padding: 15px;
 }
+
+/* mdl page content */
+
+.mdl-grid {
+  padding: 0 !important;
+
+  .mdl-card {
+    width: 100%;
+  }
+}
+
+.page-content h2 {
+  font-size: 36px;
+}
+
+.page-content h2 .mdl-button {
+  float: right;
+  margin-top: -4px;
+}
