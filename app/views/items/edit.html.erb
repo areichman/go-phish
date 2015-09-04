@@ -15,15 +15,17 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :action %><br>
-    <%= f.text_field :action, :size => "80" %>
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <%= f.text_field :action, :id => "item-form-action", :class => "mdl-textfield__input" %>
+    <%= f.label :action, :class => "mdl-textfield__label", :for => "item-form-action" %>
   </div>
-  <div class="field">
-    <%= f.label :done, 'Done?' %>
-    <%= f.check_box :done %>
-  </div>
+  <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="item-form-done">
+    <%= f.check_box :done, :id => "item-form-done", :class => "mdl-checkbox__input"%>
+    <span class="mdl-checkbox__label">Done</span>
+  </label>
+  <br><br>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %>
+    <%= link_to 'Cancel', @project, :class => "mdl-button mdl-js-button mdl-button--colored" %>
   </div>
 <% end %>
