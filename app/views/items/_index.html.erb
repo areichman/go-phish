@@ -11,7 +11,7 @@
               { :controller => :items, :action => :update,
                 :id => item.id, :project_id => @project.id,
                 :item => { :done => true } },
-              { :method => :patch } %>
+              { :method => :patch, :class => "mdl-button mdl-js-button mdl-button--primary"} %>
       <% end %>
     </li>
   <% end %>

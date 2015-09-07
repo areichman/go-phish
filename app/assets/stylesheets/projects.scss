@@ -15,4 +15,17 @@
   li a {
     text-decoration: none;
   }
+
+  li.done {
+    text-decoration: line-through;
+  }
+
+  li.not-done form {
+    float: right;
+  }
+
+  li.not-done .mdl-button {
+    height: auto;
+    line-height: normal;
+  }
 }
