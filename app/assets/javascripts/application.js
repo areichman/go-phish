@@ -13,3 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(document).on('click', 'a[data-theme]', function(e) {
+  e.preventDefault();
+  localStorage.color = e.target.innerHTML.replace(' theme', '').toLowerCase();
+  location.reload();
+})

@@ -10,9 +10,18 @@
     <%= stylesheet_link_tag    "application", media: "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
-    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.indigo-pink.min.css">
+    <link id="mdl-theme" rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.blue-red.min.css">
     <script src="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <script>
+      // override the default color theme
+      if (localStorage.color == 'pink') {
+        document.getElementById('mdl-theme').href = "https://storage.googleapis.com/code.getmdl.io/1.0.4/material.pink-deep_purple.min.css"
+      } else {
+
+      }
+    </script>
   </head>
   <body>
     <!-- Always shows a header, even in smaller screens. -->
@@ -33,6 +42,9 @@
         <span class="mdl-layout-title">Go Phish</span>
         <nav class="mdl-navigation">
           <%= link_to 'Projects', projects_path, :class => "mdl-navigation__link" %>
+          <hr>
+          <a href="#" class="mdl-navigation__link" data-theme="red">Blue theme</a>
+          <a href="#" class="mdl-navigation__link" data-theme="pink">Pink theme</a>
         </nav>
       </div>
       <main class="mdl-layout__content">
