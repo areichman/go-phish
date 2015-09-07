@@ -29,4 +29,6 @@ http://ruby-on-rails-125022.nitrousapp.com:3000/
   back to the server.
   
 * The MDL sort menu on the project list hides the app navbar when it's expanded for some reason. I didn't
-  have time to figure out why that is happening.
+  have time to figure out why that is happening. It also doesn't appear to work on my iPhone. I'm
+  guessing I have some MDL styles used in the wrong place and I didn't have time to debug it further.
+  The menu is at least function on Chrome/Mac so it shows the sorting function working.
