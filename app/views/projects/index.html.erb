@@ -1,8 +1,20 @@
 <h2>
   Projects
+
   <%= link_to(new_project_path, html_options = {:class => "mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-button--mini-fab"}) do %>
     <i class="material-icons">add</i>
   <% end %>
+
+  <button id="project-sort-menu" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-button--mini-fab">
+    <i class="material-icons">more_vert</i>
+  </button>
+  <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="project-sort-menu">
+    <li class="mdl-menu__title">Sort</li>
+    <li class="mdl-menu__item" data-sort="title">Title</li>
+    <li class="mdl-menu__item" data-sort="items">Number of items</li>
+    <li class="mdl-menu__item" data-sort="created_at">Created At</li>
+    <li class="mdl-menu__item" data-sort="updated_at">Updated at</li>
+  </ul>
 </h2>
 
 <% if @projects.empty? %>
@@ -11,23 +23,22 @@
 
 <div class="mdl-grid">
   <% @projects.each do |project| %>
-  <div class="mdl-cell mdl-cell--6-col mdl-cell--12-col-phone mdl-cell--12-col-tablet">
+  <div class="mdl-cell mdl-cell--6-col mdl-cell--12-col-phone mdl-cell--12-col-tablet" data-title="<%= project.title %>" data-items="<%= project.items.length %>" data-created_at="<%= project.created_at %>" data-upated_at="<%= project.updated_at %>">
     <div class="mdl-card mdl-shadow--2dp">
       <div class="mdl-card__title">
-        <h3 class="mdl-card__title-text"><%= project.title %></h3>
+        <h3 class="mdl-card__title-text">
+          <%= project.title %>
+        </h3>
       </div>
       <div class="mdl-card__supporting-text">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Mauris sagittis pellentesque lacus eleifend lacinia...
+        <p>Created <%= project.created_at %>. Last updated <%= project.updated_at %></p>
       </div>
       <div class="mdl-card__actions mdl-card--border">
         <%= link_to 'View Items',  project_path(project), :class => "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" %>
         <%= link_to 'Delete', project, method: :delete, data: { confirm: 'Are you sure?' }, :class => "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" %>
       </div>
       <div class="mdl-card__menu">
-        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-          <i class="material-icons">share</i>
-        </button>
+        <span class="project-item-total"><%= project.items.length %> items</span>
       </div>
     </div>
   </div>

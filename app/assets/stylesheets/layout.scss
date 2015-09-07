@@ -59,6 +59,13 @@ main {
   }
 }
 
+.mdl-menu__title {
+  padding: 16px 16px 8px 16px;
+  text-transform: uppercase;
+  color: #808080;
+  margin-top: 0;
+}
+
 .page-content h2 {
   font-size: 36px;
 }
@@ -66,4 +73,5 @@ main {
 .page-content h2 .mdl-button--mini-fab {
   float: right;
   margin-top: 4px;
+  margin-left: 10px;
 }
